@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+  agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
 
     stages {
       /* stage('Check out') {
@@ -13,10 +18,10 @@ pipeline {
             }
 
         }*/
-        stage('Test') {
+        stage('Build') {
             steps {
-                
-                echo 'Testing..'
+                sh 'npm install'
+                echo 'Building..'
             }
         }
         stage('Deploy') {
@@ -25,12 +30,12 @@ pipeline {
             }
         }
 
-        stage('Cleanup'){
+    /*    stage('Cleanup'){
             steps {
         echo 'prune and cleanup'
         sh 'npm prune'
         sh 'rm node_modules -rf'
             }
-      }
+      }*/
     }
 }
