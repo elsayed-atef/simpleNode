@@ -2,18 +2,20 @@ pipeline {
     agent any
 
     stages {
-       stage('Check out') {
+      /* stage('Check out') {
            steps {
             checkout scm
             echo 'checkout..'
             git url: 'https://github.com/sayed24/simpleNode.git'
             checkout scm
+
                 echo 'checked..'
             }
-        }
+
+        }*/
         stage('Test') {
             steps {
-               npm install
+                
                 echo 'Testing..'
             }
         }
