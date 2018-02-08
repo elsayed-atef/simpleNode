@@ -7,26 +7,17 @@ pipeline {
     }
 
     stages {
-      /* stage('Check out') {
-           steps {
-            checkout scm
-            echo 'checkout..'
-            git url: 'https://github.com/sayed24/simpleNode.git'
-            checkout scm
-
-                echo 'checked..'
-            }
-
-        }*/
+      
         stage('Build') {
             steps {
                 sh 'npm install'
                 echo 'Building..'
             }
         }
-        stage('Deploy') {
+        stage('Build docker image') {
             steps {
-                echo 'Deploying....'
+                sh 'docker build -t nexus.vodafone.com:8433/node:latest .'
+                echo 'built....'
             }
         }
 
