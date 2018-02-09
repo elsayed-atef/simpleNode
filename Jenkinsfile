@@ -26,11 +26,13 @@ pipeline {
        
        stage('docker push') {
          
-            steps {
-               
-                sh 'docker push nexus.vodafone.com:8443/node:latest'
-                echo 'pushed....'
-            }
+               steps {
+      withDockerServer([uri: "tcp://nexus.vodafone.com:8443"]) {
+        withDockerRegistry([credentialsId: 'nexus-credential', url: "https://nexus.vodafone.com:8443"]) {
+             sh 'docker push nexus.vodafone.com:8443/node:latest'
+                   }
+             }
+              }
         }
 
     /*    stage('Cleanup'){
