@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: nexus.vodafone.com:443/node
+        image: nexus.vodafone.com:443/node-vf
         ports:
         - containerPort: 8085
       imagePullSecrets:
