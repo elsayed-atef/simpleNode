@@ -13,9 +13,10 @@ spec:
       containers:
       - name: nodejs
         image: nexus.vodafone.com:443/node-vf
+        imagePullPolicy: Always
         ports:
         - containerPort: 8085
       imagePullSecrets:
         - name: nexusregsecret
-      imagePullPolicy: Always
+      
 
