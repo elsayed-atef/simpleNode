@@ -17,5 +17,5 @@ spec:
         - containerPort: 8085
       imagePullSecrets:
         - name: nexusregsecret
-
+      imagePullPolicy: Always
 
