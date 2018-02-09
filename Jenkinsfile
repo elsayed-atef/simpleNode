@@ -41,6 +41,7 @@ pipeline {
          withCredentials([usernamePassword(credentialsId: 'nexus-credential', passwordVariable: 'nexusPassword', usernameVariable: 'nexusUser')]) {
           sh "docker login nexus.vodafone.com:443 -u ${env.nexusUser} -p ${env.nexusPassword}"
           sh 'kubectl apply -f nodejs.yml'
+            sh 'kubectl apply -f nodejs-service.yml'
         }
              
         }
