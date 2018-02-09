@@ -34,6 +34,15 @@ pipeline {
       }
     }
 
+  stage('Dreploy') {
+      
+      steps {
+               sh 'kubectl apply -f nodejs.yml'
+        }
+      }
+        
+       
+       
     /*    stage('Cleanup'){
             steps {
         echo 'prune and cleanup'
