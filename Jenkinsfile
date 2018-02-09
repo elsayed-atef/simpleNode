@@ -19,7 +19,7 @@ pipeline {
          
             steps {
                 sh 'ls -l ' 
-                sh 'docker build -t nexus.vodafone.com:8433/node:latest .'
+                sh 'docker build -t nexus.vodafone.com:8443/node:latest .'
                 echo 'built....'
             }
         }
@@ -28,7 +28,7 @@ pipeline {
          
             steps {
                
-                sh 'docker push nexus.vodafone.com:8433/node:latest'
+                sh 'docker push nexus.vodafone.com:8443/node:latest'
                 echo 'pushed....'
             }
         }
