@@ -25,10 +25,11 @@ pipeline {
         }
        
        stage('docker push') {
-         
+          steps }
                docker.withRegistry("https://nexus.vodafone.com:8443", 'nexus-credential') {
             
             push("latest")
+               }
         }
         }
 
