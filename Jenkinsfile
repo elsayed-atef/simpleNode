@@ -18,6 +18,7 @@ pipeline {
         stage('Build docker image') {
          
             steps {
+                sh 'ls -l ' 
                 sh 'docker build -t nexus.vodafone.com:8433/node:latest .'
                 echo 'built....'
             }
