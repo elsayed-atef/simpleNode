@@ -7,4 +7,4 @@ COPY  . /app
 RUN npm install
 
 EXPOSE 8085
-CMD [ "npm", "start" ]
+CMD ["node", "server.js"]
