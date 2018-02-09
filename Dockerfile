@@ -1,10 +1,10 @@
 # use a node base image
 FROM node:6-alpine
-WORKDIR /app
-
+RUN mkdir /app
 COPY  . /app
-
+WORKDIR /app
+RUN ls -l
 RUN npm install
 
 EXPOSE 8085
-CMD ["node"]
+CMD ["npm" , "start"]
