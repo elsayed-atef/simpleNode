@@ -23,6 +23,15 @@ pipeline {
                 echo 'built....'
             }
         }
+       
+       stage('docker push') {
+         
+            steps {
+               
+                sh 'docker push nexus.vodafone.com:8433/node:latest'
+                echo 'pushed....'
+            }
+        }
 
     /*    stage('Cleanup'){
             steps {
