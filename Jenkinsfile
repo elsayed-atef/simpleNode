@@ -30,6 +30,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: 'nexus-credential', passwordVariable: 'nexusPassword', usernameVariable: 'nexusUser')]) {
           sh "docker login nexus.vodafone.com:8443 -u ${env.nexusUser} -p ${env.nexusPassword}"
           sh 'docker push nexus.vodafone.com:8443/node:latest'
+          sh "docker login nexus.vodafone.com:443 -u ${env.nexusUser} -p ${env.nexusPassword}"
         }
       }
     }
