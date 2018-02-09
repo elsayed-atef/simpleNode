@@ -14,7 +14,7 @@ spec:
       - name: nodejs
         image: nexus.vodafone.com:443/node
         ports:
-        - containerPort: 3000
+        - containerPort: 8085
       imagePullSecrets:
         - name: nexusregsecret
 
