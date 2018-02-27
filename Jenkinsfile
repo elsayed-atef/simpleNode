@@ -35,7 +35,7 @@ pipeline {
       }
     }
 
-  stage('Dreploy') {
+  stage('Deploy') {
       
       steps {
          withCredentials([usernamePassword(credentialsId: 'nexus-credential', passwordVariable: 'nexusPassword', usernameVariable: 'nexusUser')]) {
